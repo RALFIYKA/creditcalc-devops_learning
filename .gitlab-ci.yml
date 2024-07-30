@@ -1,0 +1,117 @@
+stages:
+  - build
+  - test
+  - deploy
+
+variables:
+  webhook_url: "http://158.160.126.144:9091"
+  webhook_data_main: "{\"environment\": \"production\"}"
+  webhook_data_test: "{\"environment\": \"testing\"}"
+
+build-prod-image:
+  stage: build
+  tags: 
+    - docker
+  image:
+    name: gcr.io/kaniko-project/executor:v1.14.0-debug
+    entrypoint: [""]
+  script:
+    - /kaniko/executor
+      --context "${CI_PROJECT_DIR}"
+      --dockerfile "${CI_PROJECT_DIR}/Dockerfile"
+      --destination "${CI_REGISTRY_IMAGE}:${CI_COMMIT_TAG}"
+  rules:
+      - if: '$CI_COMMIT_BRANCH == "main"'
+
+  
+test-image-build:
+    stage: test
+    tags: 
+      - docker
+    image:
+      name: gcr.io/kaniko-project/executor:v1.14.0-debug
+      entrypoint: [""]
+    script:
+      - /kaniko/executor
+        --context "${CI_PROJECT_DIR}"
+        --dockerfile "${CI_PROJECT_DIR}/Dockerfile"
+        --destination "${CI_REGISTRY_IMAGE}:test"
+    rules:
+      - if: '$CI_COMMIT_BRANCH == "test"'
+
+
+deploy-job:
+  stage: deploy
+  script:
+    - 'echo "$webhook_data_main" > webhook_data.json'
+    - 'echo "$webhook_data_main"'
+    - 'curl -X POST -H "Content-Type: application/json" -d @webhook_data.json "$webhook_url"'
+  rules:
+      - if: '$CI_COMMIT_BRANCH == "main"'
+
+deploy-job-test:
+  stage: deploy
+  script:
+    - 'echo "$webhook_data_test" > webhook_data.json'
+    - 'echo "$webhook_data_test"'
+    - 'curl -X POST -H "Content-Type: application/json" -d @webhook_data.json "$webhook_url"'
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "test"'
+
+telegram_notification:
+  stage: deploy
+  script:
+    - curl -s -X POST https://api.telegram.org/bot$TOKEN/sendMessage -d chat_id=$CHAT_ID -d text="Уведомление по Калькулятору Кредита"
+
+# stages:
+#   - build_and_test
+#   - deploy
+#   - notification
+
+# build_and_test_image:
+#   stage: build_and_test
+#   tags: 
+#     - docker
+#   image:
+#     name: gcr.io/kaniko-project/executor:v1.14.0-debug
+#     entrypoint: [""]
+#   script:
+#     # Сборка образа
+#     - /kaniko/executor --context "${CI_PROJECT_DIR}" --dockerfile "${CI_PROJECT_DIR}/Dockerfile" --destination "${CI_REGISTRY_IMAGE}:${CI_COMMIT_TAG}"
+#     # Проверка ветки для тестирования образа
+#     - if [ "$CI_COMMIT_BRANCH" == "test" ]; then
+#         /kaniko/executor --context "${CI_PROJECT_DIR}" --dockerfile "${CI_PROJECT_DIR}/Dockerfile" --destination "${CI_REGISTRY_IMAGE}:test";
+#       fi
+#   rules:
+#   - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main" || $CI_COMMIT_BRANCH != "main"'
+
+
+# deploy_job:
+#   stage: deploy
+#   script:
+#     # Определяем URL вебхука
+#     - webhook_url="http://158.160.126.144:9091"
+#     # Определяем данные для вебхука в зависимости от ветки
+#     - if [ "$CI_COMMIT_BRANCH" == "main" ]; then
+#         webhook_data='{"environment": "production"}';
+#       elif [ "$CI_COMMIT_BRANCH" == "test" ]; then
+#         webhook_data='{"environment": "testing"}';
+#       elif [ "$CI_PIPELINE_SOURCE" == "merge_request_event" ] && [ "$CI_MERGE_REQUEST_TARGET_BRANCH_NAME" == "main" ]; then
+#         webhook_data='{"environment": "testing"}';
+#       else
+#         echo "Pipeline will not be triggered";
+#         exit 0;
+#       fi
+#     # Отправляем запрос с данными вебхука
+#     - curl -X POST "$webhook_url" \
+#         -H "Content-Type: application/json" \
+#         -d "$webhook_data" \
+#         -H "Private-Token:$HOOK"
+#   rules:
+#     - if: '$CI_COMMIT_BRANCH == "main" || $CI_COMMIT_BRANCH == "test"'
+
+# telegram_notification:
+#   stage: notification
+#   script:
+#     # Отправка уведомления в Telegram
+#     - curl -s -X POST https://api.telegram.org/bot$TOKEN/sendMessage -d chat_id=$CHAT_ID -d text="Уведомление по Калькулятору Кредита"

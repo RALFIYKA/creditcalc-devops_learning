@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Устанавливаем кодировку документа -->
+    <meta charset="UTF-8">
+    <!-- Устанавливаем заголовок страницы -->
+    <title>Калькулятор кредита</title>
+    <!-- Подключаем таблицу стилей -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!-- Устанавливаем иконку для страницы -->
+    <link rel="icon" type="image/x-icon" href="iconcalc.ico">
+</head>
+<body>
+    <!-- Заголовок страницы -->
+    <h1>Калькулятор кредита</h1>
+    <!-- Форма для ввода данных -->
+    <form id="loan-form">
+        <!-- Поля для ввода имени, фамилии, отчества, паспортных данных, и телефона -->
+        <!-- <label for="first-name">Имя:</label>
+        <input type="text" id="first-name" required>
+
+        <label for="last-name">Фамилия:</label>
+        <input type="text" id="last-name" required>
+
+        <label for="middle-name">Отчество:</label>
+        <input type="text" id="middle-name" required>
+
+        <label for="passport">Паспортные данные:</label>
+        <input type="text" id="passport" required>
+
+        <label for="phone">Телефон:</label>
+        <input type="tel" id="phone" required> -->
+
+        <!-- Поля для ввода суммы кредита, процентной ставки и срока -->
+        <label for="amount">Сумма кредита:</label>
+        <input type="number" id="amount" required>
+        
+        <label for="percent">Процентная ставка:</label>
+        <input type="number" id="percent" required>
+        
+        <label for="term">Срок (в месяцах):</label>
+        <input type="number" id="term" required>
+        
+        <!-- Кнопка для отправки формы -->
+        <button type="submit">Рассчитать</button>
+    </form>
+    
+    <!-- Блок для отображения результатов -->
+    <div id="results" style="display: none;"> 
+        <!-- Отображаем ежемесячный платеж, общую сумму кредита и переплату -->
+        <p>Сумма кредита <span id="amount"></span></p>
+        <p>Ежемесячный платеж: <span id="monthly-payment"></span></p>
+        <p>Общая сумма кредита: <span id="total-payment"></span></p>
+        <!-- <p>Переплата: <span id="overpayment"></span></p> -->
+        <!-- Заголовок таблицы выплат по месяцам -->
+        <h2>Таблица выплат по месяцам</h2>
+        <!-- Таблица для отображения детализации выплат -->
+        <table id="payment-table">
+            <thead>
+                <tr>
+                    <!-- Заголовки столбцов таблицы -->
+                    <th>Месяц</th>
+                    <th>Сумма выплаты</th>
+                    <th>Остаток задолженности</th>
+                </tr>
+            </thead>
+            <!-- Тело таблицы для добавления строк -->
+            <tbody id="payment-table-body">
+            </tbody>
+        </table>
+        <!-- Кнопка для скрытия результатов -->
+        <button id="hide-results">Скрыть результаты</button>
+        <button onclick="exportToPDF()">Экспорт в PDF</button> <!-- Вызов функции exportToPDF() при клике на кнопку -->
+        <button id="export-csv-btn">Экспорт в CSV</button> <!-- Кнопка для экспорта в CSV -->
+    </div>
+    <!-- Подключаем библиотеку для экспорта в PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <!-- Подключаем скрипт -->
+    <script src="script.js"></script>
+</body>
+</html>

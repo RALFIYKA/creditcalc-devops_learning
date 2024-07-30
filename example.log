@@ -1,0 +1,450 @@
+ERROR:root:Error decoding JSON data
+ERROR:root:Error decoding JSON data
+[2024-04-25 20:43:46] Starting the daemon to monitor running processes...
+2024-04-25 20:43:46 - Python process for fetcherhook.pyw is Stopped
+2024-04-25 20:43:46 - Python process for fetcherhook1.py is Stopped
+2024-04-25 20:48:46 - Python process for fetcherhook.pyw is Stopped
+2024-04-25 20:48:46 - Python process for fetcherhook1.py is Stopped
+ERROR:root:Error decoding JSON data
+2024-04-25 20:53:46 - Python process for fetcherhook.pyw is Stopped
+2024-04-25 20:53:46 - Python process for fetcherhook1.py is Stopped
+ERROR:root:Error decoding JSON data
+ERROR:root:Error decoding JSON data
+ERROR:root:Error decoding JSON data
+2024-04-25 20:58:46 - Python process for fetcherhook.pyw is Stopped
+2024-04-25 20:58:46 - Python process for fetcherhook1.py is Stopped
+ERROR:root:Error decoding JSON data
+ERROR:root:Error decoding JSON data
+2024-04-25 21:03:46 - Python process for fetcherhook.pyw is Stopped
+2024-04-25 21:03:46 - Python process for fetcherhook1.py is Stopped
+2024-04-25 21:08:46 - Python process for fetcherhook.pyw is Stopped
+2024-04-25 21:08:46 - Python process for fetcherhook1.py is Stopped
+ERROR:root:Error decoding JSON data
+2024-04-25 21:13:46 - Python process for fetcherhook.pyw is Stopped
+2024-04-25 21:13:46 - Python process for fetcherhook1.py is Stopped
+WARNING:root:Raw request: POST / HTTP/1.1
+Host: 158.160.126.144:9091
+User-Agent: curl/7.68.0
+Accept: */*
+Content-Type: application/json
+Content-Length: 29
+
+{"environment": "production"}
+ERROR:root:Error decoding JSON data
+WARNING:root:Raw request: POST / HTTP/1.1
+Host: 158.160.126.144:9091
+User-Agent: curl/7.68.0
+Accept: */*
+Content-Type: application/json
+Content-Length: 29
+
+{"environment": "production"}
+ERROR:root:Error decoding JSON data
+2024-04-25 21:18:46 - Python process for fetcherhook.pyw is Stopped
+2024-04-25 21:18:46 - Python process for fetcherhook1.py is Stopped
+WARNING:root:Raw request: POST / HTTP/1.1
+Host: 158.160.126.144:9091
+User-Agent: curl/7.68.0
+Accept: */*
+Content-Type: application/json
+Content-Length: 26
+
+{"environment": "testing"}
+ERROR:root:Error decoding JSON data
+2024-04-25 21:23:46 - Python process for fetcherhook.pyw is Stopped
+2024-04-25 21:23:46 - Python process for fetcherhook1.py is Stopped
+WARNING:root:Raw request: POST / HTTP/1.1
+Host: 158.160.126.144:9091
+User-Agent: curl/7.68.0
+Accept: */*
+Content-Type: application/json
+Content-Length: 26
+
+{"environment": "testing"}
+ERROR:root:Error decoding JSON data
+WARNING:root:Raw request: POST / HTTP/1.1
+Host: 158.160.126.144:9091
+User-Agent: curl/7.68.0
+Accept: */*
+Content-Type: application/json
+Content-Length: 29
+
+{"environment": "production"}
+ERROR:root:Error decoding JSON data
+WARNING:root:Raw request: POST / HTTP/1.1
+Host: 158.160.126.144:9091
+User-Agent: curl/7.68.0
+Accept: */*
+Content-Type: application/json
+Content-Length: 29
+
+{"environment": "production"}
+ERROR:root:Error decoding JSON data
+2024-04-25 21:28:46 - Python process for fetcherhook.pyw is Stopped
+2024-04-25 21:28:46 - Python process for fetcherhook1.py is Stopped
+2024-04-25 21:33:46 - Python process for fetcherhook.pyw is Stopped
+2024-04-25 21:33:46 - Python process for fetcherhook1.py is Stopped
+2024-04-25 21:38:46 - Python process for fetcherhook.pyw is Stopped
+2024-04-25 21:38:46 - Python process for fetcherhook1.py is Stopped
+2024-04-25 21:43:46 - Python process for fetcherhook.pyw is Stopped
+2024-04-25 21:43:46 - Python process for fetcherhook1.py is Stopped
+WARNING:root:Raw request: POST / HTTP/1.1
+Host: 158.160.126.144:9091
+User-Agent: curl/7.68.0
+Accept: */*
+Content-Type: application/json
+Content-Length: 29
+
+{"environment": "production"}
+INFO:root:Executing command: docker stop credit-calc
+INFO:root:Command executed successfully: credit-calc
+
+INFO:root:Executing command: docker rm credit-calc
+INFO:root:Command executed successfully: credit-calc
+
+INFO:root:Executing command: docker pull simpleaddress.ru:5050/do-2/credit-devops-calc
+INFO:root:Command executed successfully: Using default tag: latest
+latest: Pulling from do-2/credit-devops-calc
+4abcf2066143: Already exists
+92af17be4a00: Already exists
+1201812f08b3: Already exists
+d8eeee039a11: Already exists
+f2d655b02703: Already exists
+cfd3bbe2e1ba: Already exists
+a32baadc1126: Already exists
+8785417bcea8: Already exists
+6306a6513765: Pulling fs layer
+6306a6513765: Verifying Checksum
+6306a6513765: Download complete
+6306a6513765: Pull complete
+Digest: sha256:3faf2fd0c8636795ad937c6c8f7e3e1342f21f49574097fe0380c1b553d15174
+Status: Downloaded newer image for simpleaddress.ru:5050/do-2/credit-devops-calc:latest
+simpleaddress.ru:5050/do-2/credit-devops-calc:latest
+
+INFO:root:Executing command: docker tag simpleaddress.ru:5050/do-2/credit-devops-calc credit-calc:latest | docker image rm credit-calc
+INFO:root:Command executed successfully: Untagged: credit-calc:latest
+
+INFO:root:Executing command: docker run --name credit-calc -d -p 30026:80 credit-calc
+ERROR:root:Error executing command: Unable to find image 'credit-calc:latest' locally
+docker: Error response from daemon: pull access denied for credit-calc, repository does not exist or may require 'docker login': denied: requested access to the resource is denied.
+See 'docker run --help'.
+
+INFO:root:Executing command: (cd /credit-devops-calc && git fetch)
+ERROR:root:Error executing command: /bin/sh: 1: cd: can't cd to /credit-devops-calc
+
+2024-04-25 21:48:46 - Python process for fetcherhook.pyw is Stopped
+2024-04-25 21:48:46 - Python process for fetcherhook1.py is Stopped
+WARNING:root:Raw request: POST / HTTP/1.1
+Host: 158.160.126.144:9091
+User-Agent: curl/7.68.0
+Accept: */*
+Content-Type: application/json
+Content-Length: 26
+
+{"environment": "testing"}
+INFO:root:Executing command: docker stop credit-calc-test
+ERROR:root:Error executing command: Error response from daemon: No such container: credit-calc-test
+
+INFO:root:Executing command: docker rm credit-calc-test
+ERROR:root:Error executing command: Error response from daemon: No such container: credit-calc-test
+
+INFO:root:Executing command: docker pull simpleaddress.ru:5050/do-2/credit-devops-calc:test
+INFO:root:Command executed successfully: test: Pulling from do-2/credit-devops-calc
+4abcf2066143: Already exists
+92af17be4a00: Already exists
+1201812f08b3: Already exists
+d8eeee039a11: Already exists
+f2d655b02703: Already exists
+cfd3bbe2e1ba: Already exists
+a32baadc1126: Already exists
+8785417bcea8: Already exists
+f8dc0d96de64: Pulling fs layer
+f8dc0d96de64: Verifying Checksum
+f8dc0d96de64: Download complete
+f8dc0d96de64: Pull complete
+Digest: sha256:1b702a90bc787e3a0985bcf169e2697b0adc29d3ba5de99e0645c65bb2afe551
+Status: Downloaded newer image for simpleaddress.ru:5050/do-2/credit-devops-calc:test
+simpleaddress.ru:5050/do-2/credit-devops-calc:test
+
+INFO:root:Executing command: docker tag simpleaddress.ru:5050/do-2/credit-devops-calc credit-calc:test | docker image rm credit-calc-test
+ERROR:root:Error executing command: Error response from daemon: No such image: credit-calc-test:latest
+
+INFO:root:Executing command: docker run --name credit-calc-test -d -p 30027:80 credit-calc:test
+INFO:root:Command executed successfully: d07011e9192304a078c23e0db370ec8720d9721894b2d88450486f74a8e646d7
+
+INFO:root:Executing command: (cd /credit-devops-calc && git fetch)
+ERROR:root:Error executing command: /bin/sh: 1: cd: can't cd to /credit-devops-calc
+
+2024-04-25 21:53:46 - Python process for fetcherhook.pyw is Stopped
+2024-04-25 21:53:46 - Python process for fetcherhook1.py is Stopped
+WARNING:root:Raw request: POST / HTTP/1.1
+Host: 158.160.126.144:9091
+User-Agent: curl/7.68.0
+Accept: */*
+Content-Type: application/json
+Content-Length: 26
+
+{"environment": "testing"}
+INFO:root:Executing command: docker stop credit-calc-test
+INFO:root:Command executed successfully: credit-calc-test
+
+INFO:root:Executing command: docker rm credit-calc-test
+INFO:root:Command executed successfully: credit-calc-test
+
+INFO:root:Executing command: docker pull simpleaddress.ru:5050/do-2/credit-devops-calc:test
+INFO:root:Command executed successfully: test: Pulling from do-2/credit-devops-calc
+4abcf2066143: Already exists
+92af17be4a00: Already exists
+1201812f08b3: Already exists
+d8eeee039a11: Already exists
+f2d655b02703: Already exists
+cfd3bbe2e1ba: Already exists
+a32baadc1126: Already exists
+8785417bcea8: Already exists
+8fe9b183b010: Pulling fs layer
+8fe9b183b010: Download complete
+8fe9b183b010: Pull complete
+Digest: sha256:621e4d0ef0502386afc80f07e49de149344e00bd018418a0037feb11e98a77e2
+Status: Downloaded newer image for simpleaddress.ru:5050/do-2/credit-devops-calc:test
+simpleaddress.ru:5050/do-2/credit-devops-calc:test
+
+INFO:root:Executing command: docker tag simpleaddress.ru:5050/do-2/credit-devops-calc credit-calc:test | docker image rm credit-calc-test
+ERROR:root:Error executing command: Error response from daemon: No such image: credit-calc-test:latest
+
+INFO:root:Executing command: docker run --name credit-calc-test -d -p 30027:80 credit-calc:test
+INFO:root:Command executed successfully: 3c2a3dab65ff1e830b950e0b6dd873055621816e2f7e92bf44062d6b3b9cf450
+
+INFO:root:Executing command: (cd /credit-devops-calc && git fetch)
+ERROR:root:Error executing command: /bin/sh: 1: cd: can't cd to /credit-devops-calc
+
+[2024-04-26 21:40:19] Starting the daemon to monitor running processes...
+[2024-04-26 22:10:21] Starting the daemon to monitor running processes...
+2024-04-26 22:10:21 - Python process for /home/do-2-user1/credit-devops-calc/fetcherhook.py is not running, restarting...
+2024-04-26 22:15:21 - Python process for /home/do-2-user1/credit-devops-calc/fetcherhook.py is not running, restarting...
+2024-04-26 22:20:21 - Python process for /home/do-2-user1/credit-devops-calc/fetcherhook.py is not running, restarting...
+2024-04-26 22:25:21 - Python process for /home/do-2-user1/credit-devops-calc/fetcherhook.py is not running, restarting...
+INFO:root:Executing command: docker stop credit-calc-test
+INFO:root:Command executed successfully: credit-calc-test
+
+INFO:root:Executing command: docker rm credit-calc-test
+INFO:root:Command executed successfully: credit-calc-test
+
+INFO:root:Executing command: docker pull simpleaddress.ru:5050/do-2/credit-devops-calc:test
+INFO:root:Command executed successfully: test: Pulling from do-2/credit-devops-calc
+4abcf2066143: Already exists
+92af17be4a00: Already exists
+1201812f08b3: Already exists
+d8eeee039a11: Already exists
+f2d655b02703: Already exists
+cfd3bbe2e1ba: Already exists
+a32baadc1126: Already exists
+8785417bcea8: Already exists
+352aa6fdc35e: Pulling fs layer
+352aa6fdc35e: Verifying Checksum
+352aa6fdc35e: Download complete
+352aa6fdc35e: Pull complete
+Digest: sha256:f0580173c03aa4b3700f3b8d187b182d034006dcde187c458429afae7d10f565
+Status: Downloaded newer image for simpleaddress.ru:5050/do-2/credit-devops-calc:test
+simpleaddress.ru:5050/do-2/credit-devops-calc:test
+
+INFO:root:Executing command: docker tag simpleaddress.ru:5050/do-2/credit-devops-calc credit-calc:test | docker image rm credit-calc-test
+ERROR:root:Error executing command: Error response from daemon: No such image: credit-calc-test:latest
+
+INFO:root:Executing command: docker run --name credit-calc-test -d -p 30027:80 credit-calc:test
+INFO:root:Command executed successfully: ba6cba17423e8638329006a8d8ed0674c9970a31e4f0c9182ca55acad355a792
+
+INFO:root:Executing command: (cd /credit-devops-calc && git fetch)
+ERROR:root:Error executing command: /bin/sh: 1: cd: can't cd to /credit-devops-calc
+
+INFO:root:Executing command: docker stop credit-calc
+ERROR:root:Error executing command: Error response from daemon: No such container: credit-calc
+
+INFO:root:Executing command: docker rm credit-calc
+ERROR:root:Error executing command: Error response from daemon: No such container: credit-calc
+
+INFO:root:Executing command: docker pull simpleaddress.ru:5050/do-2/credit-devops-calc
+INFO:root:Command executed successfully: Using default tag: latest
+latest: Pulling from do-2/credit-devops-calc
+4abcf2066143: Already exists
+92af17be4a00: Already exists
+1201812f08b3: Already exists
+d8eeee039a11: Already exists
+f2d655b02703: Already exists
+cfd3bbe2e1ba: Already exists
+a32baadc1126: Already exists
+8785417bcea8: Already exists
+b1527d7195db: Pulling fs layer
+b1527d7195db: Verifying Checksum
+b1527d7195db: Download complete
+b1527d7195db: Pull complete
+Digest: sha256:f34117af9587b0d0e2c3d9125088bbc15f23a6a4c5a0058f3b1ed29cb984ba46
+Status: Downloaded newer image for simpleaddress.ru:5050/do-2/credit-devops-calc:latest
+simpleaddress.ru:5050/do-2/credit-devops-calc:latest
+
+INFO:root:Executing command: docker tag simpleaddress.ru:5050/do-2/credit-devops-calc credit-calc:latest | docker image rm credit-calc
+INFO:root:Command executed successfully: Untagged: credit-calc:latest
+
+INFO:root:Executing command: docker run --name credit-calc -d -p 30026:80 credit-calc
+ERROR:root:Error executing command: Unable to find image 'credit-calc:latest' locally
+docker: Error response from daemon: pull access denied for credit-calc, repository does not exist or may require 'docker login': denied: requested access to the resource is denied.
+See 'docker run --help'.
+
+INFO:root:Executing command: (cd /credit-devops-calc && git fetch)
+ERROR:root:Error executing command: /bin/sh: 1: cd: can't cd to /credit-devops-calc[2024-04-28 22:02:59] Starting the daemon to monitor running processes...
+[2024-04-28 22:06:21] Starting the daemon to monitor running processes...
+[2024-04-28 22:08:22] Starting the daemon to monitor running processes...
+[2024-04-28 22:09:10] Starting the daemon to monitor running processes...
+---------------------------------------
+2024-04-28 22:09:12 - Container stop and restart list after 2 hours:
+---------------------------------------
+2024-04-28 22:09:12 - Logs written to /home/do-2-user1/credit-devops-calc/example.log
+---------------------------------------[2024-04-28 22:10:06] Starting the daemon to monitor running processes...
+INFO:root:Executing command: docker stop credit-calc-test
+INFO:root:Command executed successfully: credit-calc-test
+
+INFO:root:Executing command: docker rm credit-calc-test
+INFO:root:Command executed successfully: credit-calc-test
+
+INFO:root:Executing command: docker pull simpleaddress.ru:5050/do-2/credit-devops-calc:test
+INFO:root:Command executed successfully: test: Pulling from do-2/credit-devops-calc
+4abcf2066143: Already exists
+92af17be4a00: Already exists
+1201812f08b3: Already exists
+d8eeee039a11: Already exists
+f2d655b02703: Already exists
+cfd3bbe2e1ba: Already exists
+a32baadc1126: Already exists
+8785417bcea8: Already exists
+9f8aaf5fdc1a: Pulling fs layer
+9f8aaf5fdc1a: Verifying Checksum
+9f8aaf5fdc1a: Download complete
+9f8aaf5fdc1a: Pull complete
+Digest: sha256:72979cf304d9f70d961bcf78765b3b12644ae217114f5081e2b13097e8ffde21
+Status: Downloaded newer image for simpleaddress.ru:5050/do-2/credit-devops-calc:test
+simpleaddress.ru:5050/do-2/credit-devops-calc:test
+
+INFO:root:Executing command: docker tag simpleaddress.ru:5050/do-2/credit-devops-calc:test credit-calc-test:test | docker image rm simpleaddress.ru:5050/do-2/credit-devops-calc:test
+INFO:root:Command executed successfully: Untagged: simpleaddress.ru:5050/do-2/credit-devops-calc:test
+Untagged: simpleaddress.ru:5050/do-2/credit-devops-calc@sha256:72979cf304d9f70d961bcf78765b3b12644ae217114f5081e2b13097e8ffde21
+
+INFO:root:Executing command: docker run --name credit-calc-test -d -p 30027:80 credit-calc-test:test
+INFO:root:Command executed successfully: b98b38eef5fbf274cb4fdc05fffd283e3351f144ef2f98ebf3af29f9fd7e6b8b
+
+INFO:root:Executing command: docker stop credit-calc-test
+INFO:root:Command executed successfully: credit-calc-test
+
+INFO:root:Executing command: docker rm credit-calc-test
+INFO:root:Command executed successfully: credit-calc-test
+
+INFO:root:Executing command: docker pull simpleaddress.ru:5050/do-2/credit-devops-calc:test
+INFO:root:Command executed successfully: test: Pulling from do-2/credit-devops-calc
+Digest: sha256:72979cf304d9f70d961bcf78765b3b12644ae217114f5081e2b13097e8ffde21
+Status: Downloaded newer image for simpleaddress.ru:5050/do-2/credit-devops-calc:test
+simpleaddress.ru:5050/do-2/credit-devops-calc:test
+
+INFO:root:Executing command: docker tag simpleaddress.ru:5050/do-2/credit-devops-calc:test credit-calc-test:test | docker image rm simpleaddress.ru:5050/do-2/credit-devops-calc:test
+INFO:root:Command executed successfully: Untagged: simpleaddress.ru:5050/do-2/credit-devops-calc:test
+Untagged: simpleaddress.ru:5050/do-2/credit-devops-calc@sha256:72979cf304d9f70d961bcf78765b3b12644ae217114f5081e2b13097e8ffde21
+
+INFO:root:Executing command: docker run --name credit-calc-test -d -p 30027:80 credit-calc-test:test
+INFO:root:Command executed successfully: 808a0223f69682daa5886d82675a0135401f17d5379be4a95eabe4b9317c1286
+
+WARNING:root:IP address 45.92.176.144 is not in whitelist
+INFO:root:Executing command: docker stop credit-calc
+ERROR:root:Error executing command: Error response from daemon: No such container: credit-calc
+
+INFO:root:Executing command: docker rm credit-calc
+ERROR:root:Error executing command: Error response from daemon: No such container: credit-calc
+
+INFO:root:Executing command: docker pull simpleaddress.ru:5050/do-2/credit-devops-calc
+INFO:root:Command executed successfully: Using default tag: latest
+latest: Pulling from do-2/credit-devops-calc
+4abcf2066143: Already exists
+92af17be4a00: Already exists
+1201812f08b3: Already exists
+d8eeee039a11: Already exists
+f2d655b02703: Already exists
+cfd3bbe2e1ba: Already exists
+a32baadc1126: Already exists
+8785417bcea8: Already exists
+0795c8fc5b3c: Pulling fs layer
+0795c8fc5b3c: Download complete
+0795c8fc5b3c: Pull complete
+Digest: sha256:4f74cd46e2f1353306b36083266e92b5d49d4f0bbb4c8e4f505c714b51b09622
+Status: Downloaded newer image for simpleaddress.ru:5050/do-2/credit-devops-calc:latest
+simpleaddress.ru:5050/do-2/credit-devops-calc:latest
+
+INFO:root:Executing command: docker tag simpleaddress.ru:5050/do-2/credit-devops-calc:latest credit-calc:latest | docker image rm simpleaddress.ru:5050/do-2/credit-devops-calc:latest
+INFO:root:Command executed successfully: Untagged: simpleaddress.ru:5050/do-2/credit-devops-calc:latest
+Untagged: simpleaddress.ru:5050/do-2/credit-devops-calc@sha256:4f74cd46e2f1353306b36083266e92b5d49d4f0bbb4c8e4f505c714b51b09622
+
+INFO:root:Executing command: docker run --name credit-calc-main -d -p 30026:80 credit-calc
+ERROR:root:Error executing command: docker: Error response from daemon: Conflict. The container name "/credit-calc-main" is already in use by container "16374f6b2d4dfd0f808519884141f139b53b38649006e6637719a2784883e980". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+
+2024-04-28 22:20:06 - Python process for /home/do-2-user1/credit-devops-calc/fetcherhook.py is not running, restarting...
+INFO:root:Executing command: docker stop credit-calc-test
+INFO:root:Command executed successfully: credit-calc-test
+
+INFO:root:Executing command: docker rm credit-calc-test
+INFO:root:Command executed successfully: credit-calc-test
+
+INFO:root:Executing command: docker pull simpleaddress.ru:5050/do-2/credit-devops-calc:test
+INFO:root:Command executed successfully: test: Pulling from do-2/credit-devops-calc
+4abcf2066143: Already exists
+92af17be4a00: Already exists
+1201812f08b3: Already exists
+d8eeee039a11: Already exists
+f2d655b02703: Already exists
+cfd3bbe2e1ba: Already exists
+a32baadc1126: Already exists
+8785417bcea8: Already exists
+1e63285b6d9b: Pulling fs layer
+1e63285b6d9b: Verifying Checksum
+1e63285b6d9b: Download complete
+1e63285b6d9b: Pull complete
+Digest: sha256:7ce199dc2476228f39898524708a7dc099eb57973bead7789dc75a4c914aa7cc
+Status: Downloaded newer image for simpleaddress.ru:5050/do-2/credit-devops-calc:test
+simpleaddress.ru:5050/do-2/credit-devops-calc:test
+
+INFO:root:Executing command: docker tag simpleaddress.ru:5050/do-2/credit-devops-calc:test credit-calc-test:test | docker image rm simpleaddress.ru:5050/do-2/credit-devops-calc:test
+INFO:root:Command executed successfully: Untagged: simpleaddress.ru:5050/do-2/credit-devops-calc:test
+Untagged: simpleaddress.ru:5050/do-2/credit-devops-calc@sha256:7ce199dc2476228f39898524708a7dc099eb57973bead7789dc75a4c914aa7cc
+Deleted: sha256:593c2b187f647f2a9d7df17ef6347a24c3c8d9a2bd90a0de663d6fa340547a88
+Deleted: sha256:6cf29de8d747d1cba998578c31c082148e8d65a788a2f527152efcb5c9916f93
+
+INFO:root:Executing command: docker run --name credit-calc-test -d -p 30027:80 credit-calc-test:test
+INFO:root:Command executed successfully: c0ea6feac6751b5442d9ed16ab3f06f348a95c7275cdb237c7af862df7db5900
+
+INFO:root:Executing command: docker stop credit-calc-main
+INFO:root:Command executed successfully: credit-calc-main
+
+INFO:root:Executing command: docker rm credit-calc-main
+INFO:root:Command executed successfully: credit-calc-main
+
+INFO:root:Executing command: docker pull simpleaddress.ru:5050/do-2/credit-devops-calc
+INFO:root:Command executed successfully: Using default tag: latest
+latest: Pulling from do-2/credit-devops-calc
+4abcf2066143: Already exists
+92af17be4a00: Already exists
+1201812f08b3: Already exists
+d8eeee039a11: Already exists
+f2d655b02703: Already exists
+cfd3bbe2e1ba: Already exists
+a32baadc1126: Already exists
+8785417bcea8: Already exists
+3b1d1f8d7462: Pulling fs layer
+3b1d1f8d7462: Verifying Checksum
+3b1d1f8d7462: Download complete
+3b1d1f8d7462: Pull complete
+Digest: sha256:8099c4dd1164cd60b99b921959a71e2ac5244a7a7ea6f31f53c342fa279e5b31
+Status: Downloaded newer image for simpleaddress.ru:5050/do-2/credit-devops-calc:latest
+simpleaddress.ru:5050/do-2/credit-devops-calc:latest
+
+INFO:root:Executing command: docker tag simpleaddress.ru:5050/do-2/credit-devops-calc:latest credit-calc:latest | docker image rm simpleaddress.ru:5050/do-2/credit-devops-calc:latest
+INFO:root:Command executed successfully: Untagged: simpleaddress.ru:5050/do-2/credit-devops-calc:latest
+Untagged: simpleaddress.ru:5050/do-2/credit-devops-calc@sha256:8099c4dd1164cd60b99b921959a71e2ac5244a7a7ea6f31f53c342fa279e5b31
+
+INFO:root:Executing command: docker run --name credit-calc-main -d -p 30026:80 credit-calc
+INFO:root:Command executed successfully: 81ffa84b824af5e0fc154927c3e7cb0a8228f16961e7f03d3d84643424b5cfec
+

@@ -1,0 +1,148 @@
+/* Основной стиль для тела документа */
+body {
+    font-family: Arial, sans-serif; /* Установка шрифта */
+    background-color: #f0f0f0; /* Цвет фона */
+    text-align: center; /* Выравнивание текста по центру */
+    margin: 0; /* Убираем отступы */
+    padding: 0; /* Убираем внутренние отступы */
+}
+
+/* Стиль для заголовка h1 */
+h1 {
+    color: #333; /* Цвет текста */
+}
+
+/* Стиль для формы кредита */
+#loan-form {
+    background-color: #fff; /* Белый фон */
+    width: 400px; /* Ширина формы */
+    margin: 5% auto; /* Отступ сверху и автоматические отступы по бокам */
+    padding: 20px; /* Внутренние отступы */
+    border-radius: 5px; /* Скругление углов */
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1); /* Тень формы */
+    overflow: hidden; /* Сокрытие прокрутки */
+}
+
+/* Стиль для меток формы */
+label {
+    display: block; /* Размещение блока */
+    margin: 10px 0; /* Отступы сверху и снизу */
+}
+
+/* Стиль для текстовых и числовых полей ввода */
+input[type="text"],
+input[type="tel"],
+input[type="number"] {
+    width: 100%; /* Полная ширина */
+    padding: 10px; /* Внутренние отступы */
+    border: 1px solid #ccc; /* Граница поля */
+    border-radius: 10px; /* Скругление углов */
+    box-sizing: border-box; /* Размеры включают padding и border */
+}
+
+/* Стиль для кнопк */
+button {
+    background-color: #007BFF; /* Цвет фона кнопки */
+    color: #fff; /* Цвет текста кнопки */
+    margin: 20px 0; /* Отступы сверху и снизу */
+    padding: 10px 20px; /* Внутренние отступы */
+    border: none; /* Убираем границу */
+    border-radius: 3px; /* Скругление углов */
+    cursor: pointer; /* Курсор в виде руки */
+}
+
+/* Стиль для блока результатов */
+#results {
+    margin: 5% auto; /* Отступы и автоматические отступы по бокам */
+    width: 400px; /* Ширина блока */
+    background-color: #fff; /* Белый фон */
+    padding: 20px; /* Внутренние отступы */
+    border-radius: 5px; /* Скругление углов */
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1); /* Тень блока */
+}
+
+/* Общий стиль для абзацев */
+p {
+    margin: 10px 0; /* Отступы сверху и снизу */
+}
+
+/* Стиль для жирного текста */
+span {
+    font-weight: bold; /* Жирное начертание */
+}
+
+/* Стили для таблицы платежей */
+#payment-table {
+    width: 100%; /* Полная ширина таблицы */
+    border-collapse: collapse; /* Убираем двойные границы */
+    margin: 20px 0; /* Отступы сверху и снизу */
+    font-size: 16px; /* Размер шрифта */
+}
+
+#payment-table th {
+    background-color: #007BFF; /* Цвет фона для заголовков таблицы */
+    color: #fff; /* Цвет текста для заголовков */
+    font-weight: bold; /* Жирное начертание для заголовков */
+    padding: 10px; /* Внутренние отступы */
+    text-align: left; /* Выравнивание текста по левому краю */
+}
+
+/* Общий стиль для ячеек таблицы */
+#payment-table th,
+#payment-table td {
+    padding: 10px; /* Внутренние отступы для ячеек */
+    border: 1px solid #ccc; /* Граница ячеек */
+}
+
+/* Стиль для четных строк таблицы */
+#payment-table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Цвет фона для четных строк */
+}
+
+/* Стиль для строки таблицы при наведении */
+#payment-table tr:hover {
+    background-color: #e0e0e0; /* Цвет фона при наведении */
+}
+/* Анимация для формы кредита */
+#loan-form {
+    animation: fadeIn 1s ease;
+}
+
+/* Анимация для кнопки "Рассчитать" */
+button {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3; /* Измените цвет фона при наведении */
+}
+
+/* CSS анимация для формы */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Анимация для блока результатов */
+#results {
+    animation: fadeIn 1s ease;
+    display: none; /* Начнется с скрытым блоком */
+}
+
+/* CSS анимация для блока результатов */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
